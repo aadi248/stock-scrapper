@@ -1,14 +1,15 @@
 import requests
 import feedparser
 import os
+import streamlit as st
 from newsapi import NewsApiClient
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
-# Load environment variables from .env file
-load_dotenv()
-NEWSAPI_KEY = os.getenv('NEWSAPI_KEY')
-MARKETAUX_KEY = os.getenv('MARKETAUX_KEY')
+NEWSAPI_KEY = st.secrets.get('NEWSAPI_KEY')
+MARKETAUX_KEY = st.secrets.get('MARKETAUX_KEY')
+
+newsapi = NewsApiClient(api_key=NEWSAPI_KEY)
 
 if not NEWSAPI_KEY or not MARKETAUX_KEY:
     print("FATAL ERROR: API keys not loaded. Check your .env file.")
