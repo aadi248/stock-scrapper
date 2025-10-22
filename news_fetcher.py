@@ -21,7 +21,7 @@ def fetch_from_newsapi(query):
     
     # 1. Calculate the time window for the API call (e.g., the last 1 hour)
     time_window = datetime.now() - timedelta(hours=1) 
-    from_date = time_window.isoformat()  # Correctly format as ISO string
+    from_date = time_window.isoformat('%Y-%m-%dT:%M:%S')  # Correctly format as ISO string
     
     # Initialize list to store results
     articles = []
