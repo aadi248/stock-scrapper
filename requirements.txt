@@ -1,0 +1,9 @@
+requests
+feedparser
+newsapi-python
+nltk
+torch
+transformers
+streamlit
+schedule
+pandas

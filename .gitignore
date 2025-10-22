@@ -1,0 +1,16 @@
+# Python environment
+venv/
+__pycache__/
+*.pyc
+
+# Sensitive/Secret Files
+.env             # NEVER upload your API keys!
+news_monitor.log # Ignore the generated log file
+
+# Data/Cache Files
+company_symbols_cache.csv # Ignore the dynamic cache (use static_symbols.csv)
+
+# Large files/Models
+# If the DistilBERT model was downloaded locally:
+# **You may need to figure out where transformers saved the model and exclude that folder.**
+# For now, excluding venv handles the packages.
