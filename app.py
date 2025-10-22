@@ -9,6 +9,7 @@ from logger_setup import log_article
 from load_symbols import get_static_company_symbols # Assuming you named the static loader file this way
 from datetime import datetime
 
+
 # --- Configuration ---
 RSS_FEEDS = ["https://rss.cnn.com/rss/edition_world.rss"]
 SYMBOL_FILE = 'static_symbols.csv'
@@ -19,7 +20,7 @@ if 'news_items_df' not in st.session_state:
 if 'last_fetch' not in st.session_state:
     st.session_state.last_fetch = "Never"
 
-
+@st.cache_data(ttl=1800)
 def fetch_and_process_all():
     """Fetches news, classifies sentiment, and logs/stores results."""
     
