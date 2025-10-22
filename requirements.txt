@@ -7,3 +7,4 @@ transformers
 streamlit
 schedule
 pandas
+python-dotenv
